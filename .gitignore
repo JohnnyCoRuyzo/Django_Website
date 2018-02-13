@@ -1,5 +1,7 @@
 Site/secret_settings.py
+
 __pycache__
 
 __pycache__/
+/__pycache__/
 migrations/

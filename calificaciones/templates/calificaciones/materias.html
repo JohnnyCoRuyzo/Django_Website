@@ -1,0 +1,23 @@
+{% include "calificaciones/semestres.html"%}
+
+{% block content %} 
+<div id ="contenido" style="margin-left:55%" >
+    <div class="row" >
+        <a class="list-group-item list-group-item-action" id="add" href="/admin/calificaciones/notas/add/" target = _blank >Agregar Nota</a> 
+        {% for semestre in semestres %}
+            {% for materia in materias %}
+                {% for notas in notas %}
+                    {% if notas.SubNotas.all %} 
+                    <a class="list-group-item list-group-item-action" href="/calificaciones/{{semestre.Numero}}/{{materia.Codigo}}/{{notas.Id}}">
+                        {{notas}}
+                    </a> 
+                    {% else %}
+                    <a class="list-group-item list-group-item-action">{{notas}}</a>
+                    {% endif %}
+                {%endfor%}
+                <h4>La definitiva de {{materia.Nombre}} es: {{definitiva}}</h4>
+            {%endfor%}
+        {%endfor%}
+    </div>
+</div>
+{% endblock %}

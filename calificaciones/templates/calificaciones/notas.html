@@ -1,0 +1,22 @@
+{% include "calificaciones/materias.html"%}
+
+
+{% block content %} 
+<div id ="contenido" style="margin-left:75%;width:15%">
+    <div class="row" >
+        <a class="list-group-item list-group-item-action" id="add" href="/admin/calificaciones/subnotas/add/"  target = _blank >Agregar SubNota</a> 
+        {% for semestre in semestres %}
+            {% for materia in materias %}
+                {% for nota in notas %}
+                    {% for subnota in nota.SubNotas.all %}
+                        <a class="list-group-item list-group-item-action">
+                            {{subnota}}
+                        </a> 
+                    {%endfor%}
+                    <h4>La {{nota.Descripcion}} es: {{notaParcial}}</h4>
+                {%endfor%}
+            {%endfor%}
+        {%endfor%}
+    </div>
+</div>
+{% endblock %}

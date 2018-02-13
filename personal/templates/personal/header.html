@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <title>
+            Johnnatan Ruiz 
+        </title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        {% load staticfiles %}
+        <link rel ='stylesheet' href = "{% static 'personal/css/bootstrap.min.css' %}" type='text/css' />
+
+        <style>
+            #menu {
+                position: sticky;
+                left: 1%;
+                margin-top: 17%;
+                width: 155px;
+            }
+            #titulo {
+                position: fixed;
+                width: 100%;
+            }
+            #links {
+                position: fixed;
+                width: 12%;
+            }
+            #post {
+                position: fixed;
+                margin-left: 15%;
+                margin-right: 1%;
+                overflow: scroll;
+                height: 73%;
+                padding: 1%;
+            }
+            .colImg {
+                position: absolute;
+                margin-top: 2%;
+                margin-left: 2%;
+                width: 10%;
+                background-color: rgb(183, 218, 54);
+            }
+            .colTit {
+                position: relative;
+                margin-top: 2%;
+                left:12%;
+                width: 88%;
+                background-color: rgb(218, 160, 54);
+                text-align: center;
+            }
+            .colMenu {
+                position: relative;
+                left: 12%;
+                width: 88%;
+                background-color: rgb(218, 140, 50);
+                text-align: center;
+            }
+            #contenido {
+                position: absolute;
+                top: 20%;
+                text-align: center;
+                margin-left:13%;
+                width:15%;
+            }
+            img {
+                width: 100%;
+            }
+            footer {
+                background-color: rgb(218, 160, 54);
+                color: white;
+                left: 0;
+                bottom: 0;
+                padding: 1% 0 1% 0;
+                position: relative;
+                width: 100%;
+            }
+            .fa {
+                padding: 20px;
+                font-size: 30px;  
+                color:white;
+            }
+            .fa:hover {
+                color: lightgray;
+                text-decoration: none;
+            }
+            .btn {
+                background-color: rgb(218, 160, 54);
+                color:white;
+            }
+            .btn:hover {
+                color: lightgray;
+            }
+            .list-group-item {
+                background-color: rgb(218, 160, 54);
+                color:white;
+            }
+            .list-group-item:hover {
+                color: lightgray;
+            }
+            #add {
+                background-color: lightgray;
+                color: black;
+            }
+            #add:hover {
+                color: darkgray;
+            }
+            @media (max-width: 600px) {
+                .fa{
+                    font-size: 20px;
+                    padding: 100px;
+                }
+            }
+        </style>
+    </head>
+    
+    <body class="body" style="background-color:rgb(129, 129, 129)"data-spy="scroll" >
+        <div class="row" id="titulo" >
+            <div class="colImg"><img src="{% static 'personal/img/LOGO.png' %}" alt="Johnny's LOGO"></div>
+            <div class="colTit">
+                <h1 class="display-4">Johnny-Co Ruyzo</h1>
+            </div>
+            <div class="colMenu">
+                Holi
+            </div>
+        </div>
+            
+        <div class="btn-group-vertical" id="menu">
+                <button type="button" class="btn" onclick="window.location.href='/'"> Inicio</button>
+                <button type="button" class="btn" onclick="window.location.href='/blog'"> Blog</button>
+                <button type="button" class="btn" onclick="window.location.href='/calificaciones'"> Calificaciones</button>
+        </div>
+
+        <div style="position">
+                {% block content %}
+                {% endblock %}
+        </div>
+        
+        <footer class=" container-fluid text-center">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h5>Contactame</h5>
+                    <br>
+                    <h6>Johnnatan Ruiz - Ingeniero Electrónico</h6>
+                    <h6>Bogotá, Colombia.</h6>
+                </div>
+                <div class="col-sm-4">
+                    <h5>Encuentrame en</h5>
+                    <a href="https://www.facebook.com/johnny.ruiz1" target="_blank" class="fa fa-facebook"></a>
+                    <a href="https://github.com/JohnnyCoRuyzo" target="_blank" class="fa fa-github"></a>
+                    <a href="https://www.linkedin.com/in/johnnatanruizsanchez/" target="_blank" class="fa fa-linkedin"></a>
+                    <a href="mailto:johnnyruyzo@gmail.com?Subject=Preguntas%20Johnny's%20blog" target="_blank" class="fa fa-envelope"></a>
+                    <a href="https://twitter.com/JohnnycoRuiz" target="_blank" class="fa fa-twitter"></a>
+                </div>
+                <div class="col-sm-4">
+                    <img src="{% static 'personal/img/LOGO2.png' %}" class="icon">
+                </div>
+            </div>
+        </footer>
+    
+    </body>
+
+
+</html>

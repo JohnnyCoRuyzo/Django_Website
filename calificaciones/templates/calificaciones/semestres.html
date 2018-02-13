@@ -1,0 +1,21 @@
+{% include "calificaciones/historia.html"%}
+
+{% block content %} 
+<div id ="contenido" style="margin-left:35%">
+    <div class="row">
+        <a class="list-group-item list-group-item-action" id="add" href="/admin/calificaciones/materias/add/" target = _blank >Agregar Materia</a> 
+        {% for semestre in semestres %}
+            {% for materia in materias %}
+                    {% if materia.Notas.all %} 
+                    <a class="list-group-item list-group-item-action" href="/calificaciones/{{semestre.Numero}}/{{materia.Codigo}}">
+                        {{materia}}
+                    </a> 
+                    {% else %}
+                    <a class="list-group-item list-group-item-action">{{materia}}</a>
+                    {% endif %}
+            {%endfor%}
+            <h4>El P.A.P.P.I. para el semestre No. {{semestre.Numero}} es: {{pappi}}</h4>
+        {%endfor%}
+    </div>
+</div>
+{% endblock %}

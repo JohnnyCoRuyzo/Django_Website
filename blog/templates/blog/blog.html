@@ -1,0 +1,26 @@
+{% extends "personal/header.html" %}
+
+{% block content %} 
+
+    <div class="row" id="contenido">
+        <div id="links">
+            <div id="list-example" class="list-group">
+                    <a class="list-group-item list-group-item-action" id="add" target="_blank" href="/admin/blog/post/add/">Add Post</a>
+                {% for post in object_list %}
+                    <a class="list-group-item list-group-item-action" href="#PostNo.{{post.id}}">{{post.titulo}}</a>
+                {% endfor %}
+            </div>
+        </div>
+        <div id="post" style="background-color:lightgray">
+            <div  data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example" overflow="auto">
+                {% for post in object_list %}
+                    <div class="Post">
+                        <h3 id="PostNo.{{post.id}}">{{post.titulo}}</h3>
+                        <h5 class="text-muted">el {{post.date|date:"d/m/y, g:i a"}}</h5>
+                            <h5 style="text-align: justify">{{post.body|safe|linebreaks}}</h5>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
